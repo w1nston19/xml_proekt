@@ -1,0 +1,107 @@
+@font-face {
+	font-family: 'CaviarDreamsRegular';
+	src: url('./CaviarDreams.ttf');
+}
+@font-face {
+	font-family: 'CaviarDreamsItalic';
+	src: url('./CaviarDreams_Italic.ttf');
+}
+@font-face {
+	font-family: 'CaviarDreamsBold';
+	src: url('./CaviarDreams_Bold.ttf');
+}
+@font-face {
+	font-family: 'CaviarDreamsBoldItalic';
+	src: url('./CaviarDreams_BoldItalic.ttf');
+}
+
+body {
+    background-color: #F1F1F1;
+    font-family: CaviarDreamsRegular;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.full-grow {
+  flex-grow: 1;
+}
+
+.small-grow {
+  flex-grow: 1;
+  flex-basis: 16em;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.container {
+  padding: 0.8em 1.6em;
+  background-color: bisque;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+.museum-header {
+  font-family: CaviarDreamsBold;
+  font-size: 2em;
+  font-weight: 600;
+  padding: .5em .25em;
+}
+
+.museum-picture {
+  background-color: aquamarine;
+  padding: 30px;
+}
+
+.museum-description {
+  justify-content: center;
+  padding: 2em;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  width: 8em;
+  height: 3em;
+  background-color: #E9897E;
+  color: white;
+  border-radius: 2em;
+  border: 0;
+  margin: 0 .2em;
+}
+
+.website {
+  font-family: CaviarDreamsItalic;
+  padding: .2em;
+}
+
+.phone {
+  font-family: CaviarDreamsBold;
+  padding: .2em;
+}
+
+.address {
+  font-family: CaviarDreamsItalic;
+}
