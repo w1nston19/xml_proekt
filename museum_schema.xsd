@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="museum-catalog">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="museum-list">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="museum" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="id" type="xs:integer" />
+										<xs:element name="image">
+											<xs:complexType>
+												<xs:attribute name="location" type="xs:ENTITY"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="name" type="xs:string" />
+										<xs:element name="regionName" type="xs:string"/>
+										<xs:element name="regionId" type="xs:integer" />
+										<xs:element name="scope" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="национален" />
+													<xs:enumeration value="регионален" />
+													<xs:enumeration value="общински" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="scopeID" type="xs:integer" />
+										<xs:element name="type" type="xs:string" />
+										<xs:element name="typeID" type="xs:integer" />
+										<xs:element name="description" type="xs:string" />
+										<xs:element name="website" minOccurs="0">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="href" />
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="address" type="xs:string" />
+										<xs:element name="phone" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="regionList" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="regionInfo" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="regionNameRef" type="xs:string" />
+											<xs:attribute name="regionIDRef" type="xs:integer" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="scopeList" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="scopeInfo" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="scopeRef" type="xs:string" />
+											<xs:attribute name="scopeIdRef" type="xs:integer" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="typeList" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="typeInfo" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="typeRef" type="xs:string" />
+											<xs:attribute name="typeIDRef" type="xs:integer" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="regionKey">
+			<xs:selector xpath="museum-catalog/museum-list/museum" />
+			<xs:field xpath="region" />
+			<xs:field xpath="regionID" />
+		</xs:key>
+		<xs:keyref name="regionRef" refer="regionKey">
+			<xs:selector xpath="museum-catalog/region/regionInfo" />
+			<xs:field xpath="@regionRef" />
+			<xs:field xpath="@regionIDRef" />
+		</xs:keyref>
+		<xs:key name="typeKey">
+			<xs:selector xpath="museum-catalog/museum-list/museum" />
+			<xs:field xpath="type" />
+			<xs:field xpath="typeID" />
+		</xs:key>
+	</xs:element>
+</xs:schema>
+
