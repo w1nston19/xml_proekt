@@ -1,0 +1,231 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Каталог Музеи</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head><script>
+        var region = 0;
+        var scope = 0;
+        var type = 0;
+
+        function showCollection(list) {
+          for (var i = 0; i < list.length; i++){
+            list[i].style.display = 'block';
+          }
+        }
+
+        function hideCollection(list) {
+          for (var i = 0; i < list.length; i++){
+            list[i].style.display = 'none';
+          }
+        }
+
+        function sortRegions() {
+          ++region;
+          showCollection(document.getElementsByClassName("region" + (region % 3 + 1)));
+          hideCollection(document.getElementsByClassName("region" + ((region + 1) % 3 + 1)));
+          hideCollection(document.getElementsByClassName("region" + ((region + 2) % 3 + 1)));
+        };
+        function sortScope() {
+          ++scope;
+          showCollection(document.getElementsByClassName("scope" + (scope % 3 + 1)));
+          hideCollection(document.getElementsByClassName("scope" + ((scope + 1) % 3 + 1)));
+          hideCollection(document.getElementsByClassName("scope" + ((scope + 2) % 3 + 1)));
+        };
+        function sortType() {
+          ++type;
+          showCollection(document.getElementsByClassName("type" + (type % 6 + 1)));
+          hideCollection(document.getElementsByClassName("type" + ((type + 1) % 6 + 1)));
+          hideCollection(document.getElementsByClassName("type" + ((type + 2) % 6 + 1)));
+          hideCollection(document.getElementsByClassName("type" + ((type + 3) % 6 + 1)));
+          hideCollection(document.getElementsByClassName("type" + ((type + 4) % 6 + 1)));
+          hideCollection(document.getElementsByClassName("type" + ((type + 5) % 6 + 1)));
+        };
+      </script><body>
+      <div class="flex justify-between">
+         <h1>Каталог Музеи</h1>
+         <div class="flex flex-row"><button class="button" onclick="sortRegions();">
+               Региони
+               </button><button class="button" onclick="sortScope()">
+               Обхват
+               </button><button class="button" onclick="sortType()">
+               Тип
+               </button></div>
+      </div>
+      <div class="flex flex-row">
+         <div class="flex small-grow"></div>
+         <div class="flex full-grow flex-col">
+            <div class="flex flex-col container region2 scope2 type2">
+               <div class="museum-header">Регионален археологически музей </div>
+               <div class="flex flex-row"><img src="images/1.jpg"><div class="flex flex-col">
+                     <div class="museum-description">Регионален археологически музей в Пловдив (РАМ – Пловдив) е една от най-старите културни
+                        институции в България. Официално открит през 1882 г., неговото развитие преминава
+                        през етапа на
+                        археологическо-нумизматичен кабинет до окончателното му обособяване като Археологически
+                        музей през
+                        1920 година. Първоначално неговите фондове са съдържали нумизматична колекция от 1500
+                        монети,
+                        етнографски и исторически документи, църковна утвар, старопечатни книги от ХVII –
+                        ХVIII в., 300 икони и
+                        картини на най-прочутите български художници.
+                     </div>
+                     <div class="flex flex-row justify-around">
+                        <div class="flex flex-col justify-around"><a class="website" href="https://archaeologicalmuseumplovdiv.org/">https://archaeologicalmuseumplovdiv.org/</a><div class="phone">032/631760</div>
+                        </div>
+                        <div class="address">Пловдив 4000 пл. “Съединение” № 1</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flex flex-col container region1 scope1 type6">
+               <div class="museum-header">Национална художествена галерия</div>
+               <div class="flex flex-row"><img src="images/2.jpg"><div class="flex flex-col">
+                     <div class="museum-description">Националната художествена галерия е художествен музей в София.Във фонда си съхранява
+                        над 50000
+                        художествени творби – живопис, скулптура и графика на видни представители на
+                        българското изобразително изкуство, от които са изложени над 3000 експоната,
+                        както и икони, стенописни фрагменти, щампи, ръкописи и църковна утвар,
+                        представящи християнското изкуство.
+                     </div>
+                     <div class="flex flex-row justify-around">
+                        <div class="flex flex-col justify-around"><a class="website" href="https://nationalgallery.bg/bg/">https://nationalgallery.bg/bg/</a><div class="phone">02/9800071</div>
+                        </div>
+                        <div class="address">Двореца София 1000 пл. „Княз Александър I“ № 1</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flex flex-col container region3 scope3 type1">
+               <div class="museum-header">Военноморски музей</div>
+               <div class="flex flex-row"><img src="images/3.jpg"><div class="flex flex-col">
+                     <div class="museum-description">Военноморският музей предлага на своите посетители неповторимо пътуване по стъпките
+                        на морското
+                        историческо наследство. Музеят отразява, както героичните моменти на воинската слава,
+                        така и
+                        индивидуални съдби на български моряци. Възстановките на оръдейна палуба от ХVІІІ
+                        в. и на морско
+                        дъно ще направят посещението Ви тук запомнящо се. В България единствено във Военноморския
+                        музей може
+                        да се видят носови фигури на кораби от различни периоди, оборудване от водосамолет
+                        от Втората световна
+                        война Арадо 196. В откритата експозиция са колекциите на котви, морски мини, брегови
+                        и корабни оръдия.
+                        Тук е и корабът-музей „Дръзки”, единственият в света запазен торпедоносец от този
+                        клас.
+                     </div>
+                     <div class="flex flex-row justify-around">
+                        <div class="flex flex-col justify-around"><a class="website" href="https://www.museummaritime-bg.com/">https://www.museummaritime-bg.com/</a><div class="phone">052/73 15 23</div>
+                        </div>
+                        <div class="address">Варна 9000 бул. “Приморски” № 2</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flex flex-col container region1 scope3 type5">
+               <div class="museum-header">Музей Борис Христов</div>
+               <div class="flex flex-row"><img src="images/4.jpg"><div class="flex flex-col">
+                     <div class="museum-description">Историята на Музея „Борис Христов” води началото си от идеята на великия оперен артист
+                        неговият софийски дом на улица „Цар Самуил” № 43 да се превърне в живо културно средище.
+                        От 2003 година това свято място е държавен културен институт към Министерството на
+                        културата.
+                        Музеят „Борис Христов” пази паметта за славата на артиста, педагога, дарителя; свързва
+                        в общи
+                        проекти творци от различни изкуства и окрилява младите
+                        таланти в мечтите им към голямата сцена.
+                     </div>
+                     <div class="flex flex-row justify-around">
+                        <div class="flex flex-col justify-around"><a class="website" href="https://borischristoff.com/">https://borischristoff.com/</a><div class="phone">02/9873592</div>
+                        </div>
+                        <div class="address">София 1000 Ул. „Цар Самуил” №43</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flex flex-col container region3 scope3 type3">
+               <div class="museum-header">Аквариум </div>
+               <div class="flex flex-row"><img src="images/5.jpg"><div class="flex flex-col">
+                     <div class="museum-description">Аквариум Варна е център за популяризиране на черноморската флора и фауна, на хидрологичните
+                        и
+                        хидрохимични особености на Черно море. Живата експозиция на Аквариума обхваща представители
+                        на всички
+                        групи, които съставят фауната на Черно море. Най-много са видовете от средиземноморския
+                        комплекс,
+                        проникнали през Босфора. Чермоморската рибна фауна обхваща около 140 вида, от които
+                        важно стопанско
+                        значение имат трицоната, сафридът, скумрията, паламудът, калканът, карагьозът, хамсията,
+                        кефаловите
+                        риби, попчетата и др
+                     </div>
+                     <div class="flex flex-row justify-around">
+                        <div class="flex flex-col justify-around"><a class="website" href="https://visit.varna.bg/bg/aquarium.html">https://visit.varna.bg/bg/aquarium.html</a><div class="phone">+359 52 632 066</div>
+                        </div>
+                        <div class="address">гр. Варна, Приморски парк, бул."Приморски" 4</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flex flex-col container region2 scope3 type5">
+               <div class="museum-header">Къща-музей Хиндлиян</div>
+               <div class="flex flex-row"><img src="images/6.jpg"><div class="flex flex-col">
+                     <div class="museum-description">Къща „Хиндлиян“ е къща музей в Пловдив .Построена е през 1848 г. от Степан Хиндлиян
+                        като
+                        зестра на дъщеря му, омъжена за арменски търговец от Кишинев. Тя е една от малкото
+                        запазени в оригинал
+                        симетрични пловдивски къщи. В нея се намира единствената запазена баня с течаща топла
+                        и студена вода.
+                        Днес къщата се използва като музей и културен център за изложби.
+                     </div>
+                     <div class="flex flex-row justify-around">
+                        <div class="flex flex-col justify-around"><a class="website" href="http://oldplovdiv.bg/sights/4">http://oldplovdiv.bg/sights/4</a><div class="phone">032 628 998</div>
+                        </div>
+                        <div class="address">ул. „Артин Гидиков“ 4, 4000 Център, Пловдив</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flex flex-col container region1 scope1 type1">
+               <div class="museum-header">Национален исторически музей</div>
+               <div class="flex flex-row"><img src="images/7.jpg"><div class="flex flex-col">
+                     <div class="museum-description">НИМ е създаден с разпореждане на Бюрото на Министерския съвет на НРБ през 1973 г.
+                        Първата експозиция е открита през 1984 г. в сградата на Съдебната палата в София в
+                        чест на
+                        1300-годишнината от създаването на българската държава По решение на Министерския
+                        съвет от 15.4.1998 г.
+                        на музея е предоставен Дом № 1 в държавната резиденция Бояна. Новата експозиция е
+                        тържествено открита
+                        от министър-председателя Иван Костов на 29 юни 2000 г.
+                     </div>
+                     <div class="flex flex-row justify-around">
+                        <div class="flex flex-col justify-around"><a class="website" href="https://historymuseum.org/">https://historymuseum.org/</a><div class="phone">9554290</div>
+                        </div>
+                        <div class="address">София 1618 кв. Бояна, ул. “Витошко лале” №16</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flex flex-col container region2 scope2 type4">
+               <div class="museum-header">Регионален Етнографски Музей</div>
+               <div class="flex flex-row"><img src="images/8.jpg"><div class="flex flex-col">
+                     <div class="museum-description">Пловдив е вторият по големина у нас специализиран музей от такъв тип,
+                        утвърдена научно-образователна институция и притегателен център за културен туризъм.
+                        
+                        Основан е през 1917 г., а от 1938 г. се помещава в Куюмджиевата къща – 
+                        паметник на културата от национално значение. Музеят е постоянна институция с идеална
+                        цел, 
+                        която издирва, събира, съхранява, документира и популяризира движими културни ценности
+                        и ги експонира с изследователски, 
+                        образователни и популяризаторски цели.
+                     </div>
+                     <div class="flex flex-row justify-around">
+                        <div class="flex flex-col justify-around"><a class="website" href="https://www.ethnograph.info/front/contact.php">https://www.ethnograph.info/front/contact.php</a><div class="phone">032/ 625257</div>
+                        </div>
+                        <div class="address">Пловдив 4000 ул. “Д-р Чомаков” № 2</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="flex small-grow"></div>
+      </div>
+   </body>
+</html>
